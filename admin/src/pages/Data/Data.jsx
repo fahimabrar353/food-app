@@ -82,7 +82,7 @@ const Order = () => {
               labels: orders.map((data) => data.address.firstName),
               datasets: [
                 {
-                  label: "Order Count",
+                  label: "Order amount",
                   data: orders.map((data) => data.amount),
                   backgroundColor: [
                     "rgba(43, 63, 229, 0.8)",
