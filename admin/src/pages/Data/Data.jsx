@@ -11,6 +11,7 @@ import Chart from "chart.js/auto";
 
 const Order = () => {
   const [orders, setOrders] = useState([]);
+  const [topItems, setTopItems] = useState([]);
 
   const fetchAllOrders = async () => {
     const response = await axios.get(`${url}/api/order/list`);
@@ -21,6 +22,24 @@ const Order = () => {
       toast.error("Error");
     }
   };
+
+  const fetchTopItems = async () => {
+    try {
+      const response = await axios.get(`${url}/api/order/top-items`);
+      if (response.data.success) {
+        setTopItems(response.data.data);
+        console.log(response.data.data);
+      } else {
+        toast.error("Error fetching top items");
+      }
+    } catch (error) {
+      toast.error("Error fetching top items");
+    }
+  };
+
+  useEffect(() => {
+    fetchTopItems();
+  }, []);
 
   const statusHandler = async (event, orderId) => {
     console.log(event, orderId);
@@ -45,19 +64,13 @@ const Order = () => {
         <div className="graph">
           <Line
             data={{
-              labels: orders.map((data) => data.address.firstName),
+              labels: orders.map((data) => data.date),
               datasets: [
                 {
                   label: "Sub Total",
                   data: orders.map((data) => data.amount),
                   backgroundColor: "#064FF0",
                   borderColor: "#064FF0",
-                },
-                {
-                  label: "Total Value",
-                  data: orders.map((data) => data.total_value),
-                  backgroundColor: "#FF3030",
-                  borderColor: "#FF3030",
                 },
               ],
             }}
@@ -119,11 +132,11 @@ const Order = () => {
         <div className="graph">
           <Bar
             data={{
-              labels: orders.map((data) => data.address.firstName),
+              labels: topItems.map((data) => data._id),
               datasets: [
                 {
-                  label: "Total Value",
-                  data: orders.map((data) => data.amount),
+                  label: "Top 5 ordered items",
+                  data: topItems.map((data) => data.totalQuantity),
                   backgroundColor: "rgb(136, 191, 77)",
                   borderColor: "rgb(136, 191, 77)",
                 },
