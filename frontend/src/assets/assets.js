@@ -350,5 +350,13 @@ export const food_list = [
         price: 15,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Noodles"
-    }
+    },
+    // {
+    //     _id: "33",
+    //     name: "Veg Biriyani",
+    //     image: food_33,
+    //     price: 150,
+    //     description: "Food provides essential nutrients for overall health and well-being",
+    //     category: "Biriyani"
+    // }
 ]
