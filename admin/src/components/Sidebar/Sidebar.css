@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    color: rgb(73, 85, 126);
 }
 .sidebar-option{
     display: flex;
@@ -20,6 +21,7 @@
     padding: 8px 10px;
     border-radius: 3px 0px 0px 3px; 
     cursor: pointer;
+    color: rgb(73, 85, 126);
 }
 .sidebar{
     font-size: max(1vw,10px );

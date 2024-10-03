@@ -7,7 +7,7 @@
 }
 body{
   min-height: 100vh;
-  background-color: #FCFCFC;
+  background-color: linear-gradient(rgb(145, 157, 196), rgb(115, 126, 162));
 }
 a{
   text-decoration: none;
