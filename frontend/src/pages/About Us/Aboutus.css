@@ -1,0 +1,12 @@
+.about-us{
+    margin: 10% 2rem;
+}
+.about-us h1{
+    color: #49557E;
+}
+.about-us .container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    color:   #49557E;
+}

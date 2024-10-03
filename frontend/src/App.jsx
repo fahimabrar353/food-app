@@ -1,34 +1,42 @@
-import React, { useState } from "react";
-import Home from "./pages/Home/Home";
-import Footer from "./components/Footer/Footer";
-import Navbar from "./components/Navbar/Navbar";
-import { Route, Routes } from "react-router-dom";
-import Cart from "./pages/Cart/Cart";
-import LoginPopup from "./components/LoginPopup/LoginPopup";
-import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
-import MyOrders from "./pages/MyOrders/MyOrders";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Verify from "./pages/Verify/Verify";
-
-import Chatbot from "react-chatbot-kit";
-import "react-chatbot-kit/build/main.css";
-
-import config from "./chatbot/chatbotConfig";
-import MessageParser from "./chatbot/MessageParser";
-import ActionProvider from "./chatbot/ActionProvider";
+import React, { useState } from 'react'
+import Home from './pages/Home/Home'
+import Footer from './components/Footer/Footer'
+import Navbar from './components/Navbar/Navbar'
+import { Route, Routes } from 'react-router-dom'
+import Cart from './pages/Cart/Cart'
+import LoginPopup from './components/LoginPopup/LoginPopup'
+import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
+import MyOrders from './pages/MyOrders/MyOrders'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Verify from './pages/Verify/Verify'
+import Aboutus from './pages/About Us/Aboutus'
+import Chat from './pages/Chatbot/Chatbot'
+import Privacypolicy from './pages/PrivacyPolicy/Privacypolicy'
 
 const App = () => {
-  return (
-    <div className="App">
-      <h1>Restaurant App</h1>
-      <Chatbot
-        config={config}
-        messageParser={MessageParser}
-        actionProvider={ActionProvider}
-      />
-    </div>
-  );
-};
 
-export default App;
+  const [showLogin,setShowLogin] = useState(false);
+
+  return (
+    <>
+    <ToastContainer/>
+    {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>}
+      <div className='app'>
+        <Navbar setShowLogin={setShowLogin}/>
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/cart' element={<Cart />}/>
+          <Route path='/order' element={<PlaceOrder />}/>
+          <Route path='/myorders' element={<MyOrders />}/>
+          <Route path='/verify' element={<Verify />}/>
+          <Route path='/aboutUs' element={<Aboutus/>}/>
+          <Route path='/privacypolicy' element={<Privacypolicy />}/>
+        </Routes>
+      </div>
+      <Footer />
+    </>
+  )
+}
+
+export default App

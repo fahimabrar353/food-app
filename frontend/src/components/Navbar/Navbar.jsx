@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
+import logo  from '../../assets/logo.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { StoreContext } from '../../Context/StoreContext'
 
@@ -18,15 +19,13 @@ const Navbar = ({ setShowLogin }) => {
 
   return (
     <div className='navbar'>
-      {/* <Link to='/'><img className='logo' src={assets.logo} alt="" /></Link> */}
+      <Link to='/'><img className='logo' src={logo} alt="" /></Link>
       <ul className="navbar-menu">
         <Link to="/" onClick={() => setMenu("home")} className={`${menu === "home" ? "active" : ""}`}>home</Link>
         <a href='#explore-menu' onClick={() => setMenu("menu")} className={`${menu === "menu" ? "active" : ""}`}>menu</a>
-        <a href='#app-download' onClick={() => setMenu("mob-app")} className={`${menu === "mob-app" ? "active" : ""}`}>mobile app</a>
         <a href='#footer' onClick={() => setMenu("contact")} className={`${menu === "contact" ? "active" : ""}`}>contact us</a>
       </ul>
       <div className="navbar-right">
-        <img src={assets.search_icon} alt="" />
         <Link to='/cart' className='navbar-search-icon'>
           <img src={assets.basket_icon} alt="" />
           <div className={getTotalCartAmount() > 0 ? "dot" : ""}></div>
@@ -48,3 +47,9 @@ const Navbar = ({ setShowLogin }) => {
 }
 
 export default Navbar
+
+
+//Anchor Tag Navigation (href='#explore-menu'):
+
+// When you click on the "menu" link, the href='#explore-menu' attribute causes the browser to scroll to the element with the ID explore-menu on the page.
+// So, if you have an element like <div id="explore-menu">...</div>, clicking this link will scroll the page to this section.

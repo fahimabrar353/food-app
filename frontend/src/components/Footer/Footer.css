@@ -11,20 +11,20 @@
 .footer-content{
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 2fr ;
     gap: 80px;
 }
-.footer-content-left , .footer-content-center , .footer-content-right {
+.footer-content-left , .footer-content-right {
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 20px;
 }
-.footer-content-left ul li, .footer-content-center ul li, .footer-content-right ul li{
+.footer-content-left ul li,  .footer-content-right ul li{
     margin-bottom: 10px;
     list-style: none;
 }
-.footer-content-left h2, .footer-content-center h2, .footer-content-right h2{
+.footer-content-left h2,  .footer-content-right h2{
     color: #f9ce69;
 }
 .footer-social-icons img{
