@@ -45,12 +45,26 @@
     padding: 12px 20px;
     border-radius: 4px;
     cursor: pointer;
+    margin-top: 1rem;
 }
 .payment-options button{
     border: none;
     background-color: #4741a6;
     color: white;
     padding: 12px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+.place-order-submit{
+    margin-top: 1rem;
+    border: none;
+    color: #f9ce69;
+    background-color: #4741a6;
+    width: max(15vw,200px);
+    padding: 12px 0px;
     border-radius: 4px;
     cursor: pointer;
 }

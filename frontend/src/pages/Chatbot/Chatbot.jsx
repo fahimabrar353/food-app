@@ -3,7 +3,7 @@ import "react-chatbot-kit/build/main.css";
 import config from "../../chatbot/chatbotConfig";
 import MessageParser from "../../chatbot/MessageParser";
 import ActionProvider from "../../chatbot/ActionProvider";
-import   {FaArrowLeft } from 'react-icons/fa';
+import { AiFillMessage } from "react-icons/ai";
 import { useState } from "react";
 // import './ChatBot.css'
 const Chat =() => {
@@ -22,7 +22,7 @@ const Chat =() => {
             position: 'fixed',
             bottom: '20px',
             right: '20px',
-            backgroundColor: '#49557E',
+            backgroundColor: '#4741a6',
             color: 'white',
             border: 'none',
             borderRadius: '50%',
@@ -32,7 +32,7 @@ const Chat =() => {
             zIndex: 1000, // Ensure the button is on top
           }}
         >
-        <FaArrowLeft size={20} />
+        <AiFillMessage size={20} />
         </button>
   
         {/* Conditionally render the chatbot */}
