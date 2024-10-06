@@ -62,7 +62,7 @@ const Navbar = ({ setShowLogin }) => {
               <hr />
               <li onClick={() => navigate("/data")}>
                 {" "}
-                <img src={assets.bag_icon} alt="" /> <p>Statistics</p>
+                <img src={assets.statistics_icon} alt="" /> <p>Statistics</p>
               </li>
               <hr />
               <li onClick={logout}>
